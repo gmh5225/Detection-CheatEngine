@@ -16,6 +16,6 @@ You can add your detection vector easily in [CEInfo.h](https://github.com/gmh522
 ```
 
 ## Compile
-- VS2022
+- Visual Studio 2022
 - llvm-msvc [[link]](https://github.com/NewWorldComingSoon/llvm-msvc-build)
 
