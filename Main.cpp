@@ -71,23 +71,28 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 			// Shift keys, and more.  Delegate to TryGetKeyboardInput().
 			// TryGetKeyboardInput sets bTerminate to true if the user hits Esc.
 			if (TryGetKeyboardInput(hStdIn, bTerminate, buf))
-				changes.AddDirectory(CStringW(buf), false, dwNotificationFlags);
+			{
+				std::string strbuf(buf);
+				std::wstring wstrbuf(strbuf.begin(), strbuf.end());
+				changes.AddDirectory(wstrbuf.c_str(), false, dwNotificationFlags);
+			}
+				
 			break;
 		case WAIT_OBJECT_0 + 1:
 			// We've received a notification in the queue.
 			{
 				DWORD dwAction;
-				CStringW wstrFilename;
+				std::wstring wstrFilename;
 				if (changes.CheckOverflow())
 					wprintf(L"Queue overflowed.\n");
 				else
 				{
 					changes.Pop(dwAction, wstrFilename);
-					if (wstrFilename.Find(CE_DETECTION_1) != -1 ||
-						wstrFilename.Find(CE_DETECTION_2) != -1
+					if (wstrFilename.find(CE_DETECTION_1) != std::wstring::npos ||
+						wstrFilename.find(CE_DETECTION_2) != std::wstring::npos
 						)
 					{
-						wprintf(L"Find CE:%s %s\n", ExplainAction(dwAction), wstrFilename);
+						wprintf(L"Find CE:%s %s\n", ExplainAction(dwAction), wstrFilename.c_str());
 					}
 					
 				}

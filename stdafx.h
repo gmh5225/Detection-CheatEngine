@@ -26,5 +26,7 @@
 #include <list>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string>
+#include <sstream>
 
 using namespace std;
