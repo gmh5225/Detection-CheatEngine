@@ -83,6 +83,7 @@
     <None Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CEInfo.h" />
     <ClInclude Include="ReadDirectoryChangesPrivate.h" />
     <ClInclude Include="ReadDirectoryChanges.h" />
     <ClInclude Include="stdafx.h" />

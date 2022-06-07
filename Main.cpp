@@ -29,7 +29,7 @@
 
 #include "stdafx.h"
 #include "ReadDirectoryChanges.h"
-
+#include "CEInfo.h"
 
 LPCWSTR ExplainAction( DWORD dwAction );
 bool TryGetKeyboardInput( HANDLE hStdIn, bool &bTerminate, char* buf );
@@ -83,7 +83,13 @@ int _tmain(int argc, TCHAR* argv[], TCHAR* envp[])
 				else
 				{
 					changes.Pop(dwAction, wstrFilename);
-					wprintf(L"%s %s\n", ExplainAction(dwAction), wstrFilename);
+					if (wstrFilename.Find(CE_DETECTION_1) != -1 ||
+						wstrFilename.Find(CE_DETECTION_2) != -1
+						)
+					{
+						wprintf(L"Find CE:%s %s\n", ExplainAction(dwAction), wstrFilename);
+					}
+					
 				}
 			}
 			break;

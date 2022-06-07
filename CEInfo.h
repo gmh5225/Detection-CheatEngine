@@ -1,0 +1,4 @@
+#pragma once
+
+#define CE_DETECTION_1 L"ADDRESSES.FIRST"
+#define CE_DETECTION_2 L"MEMORY.FIRST"
