@@ -14,3 +14,7 @@ You can add your detection vector easily in [CEInfo.h](https://github.com/gmh522
 #define CE_DETECTION_1 L"ADDRESSES.FIRST"
 #define CE_DETECTION_2 L"MEMORY.FIRST"
 ```
+
+## Compile
+llvm-msvc [[link]](https://github.com/NewWorldComingSoon/llvm-msvc-build)
+
