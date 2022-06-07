@@ -19,3 +19,5 @@ You can add your detection vector easily in [CEInfo.h](https://github.com/gmh522
 - Visual Studio 2022
 - llvm-msvc [[link]](https://github.com/NewWorldComingSoon/llvm-msvc-build)
 
+## Some discussions on UnknownCheats
+https://www.unknowncheats.me/forum/general-programming-and-reversing/493547-using-llvm-msvc-compile-windows-driver.html
